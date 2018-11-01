@@ -14,7 +14,6 @@ class ViewController: UIViewController,ZYPhotoAlbumProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     @IBAction func selectPhotoBtnClick(_ sender: UIButton) {
@@ -35,5 +34,6 @@ class ViewController: UIViewController,ZYPhotoAlbumProtocol {
         photoAlbumVC.maxSelectCount = 9   //最大可选择张数
         self.navigationController?.present(photoAlbumVC, animated: true, completion: nil)
     }
+    
 }
 

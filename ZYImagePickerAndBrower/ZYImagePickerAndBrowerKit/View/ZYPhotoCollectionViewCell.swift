@@ -10,12 +10,15 @@ import UIKit
 
 class ZYPhotoCollectionViewCell: UICollectionViewCell {
     lazy var selectButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton.init(type: .custom)
         let contenViewSize = self.contentView.bounds.size
         button.frame = CGRect(x: contenViewSize.width * 2 / 3 - 2, y: 2, width: contenViewSize.width / 3, height: contenViewSize.width / 3)
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: contenViewSize.width/3 - contenViewSize.width/4, bottom: contenViewSize.width/3 - contenViewSize.width/4, right: 0)
-        button.asyncSetImage(UIImage.zyImageFromeBundle(named: "album_select_gray.png"), for: .normal)
+        button.asyncSetImage(UIImage.zyImageFromeBundle(named: "album_select_gray"), for: .normal)
+        button.setImage(UIImage(named: "album_select_gray"), for: .normal)        
+        button.asyncSetImage(UIImage(named: "album_select_gray"), for: .normal)
         button.addTarget(self, action: #selector(selelctButtonClick(button:)), for: .touchUpInside)
+        //button.backgroundColor = UIColor.blue
         return button
     }()
     

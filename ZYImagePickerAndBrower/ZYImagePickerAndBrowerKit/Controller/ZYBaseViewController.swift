@@ -19,6 +19,7 @@ public class ZYBaseViewController: UIViewController {
         rightButton.addTarget(self, action: #selector(rightButtonClick(button:)), for: .touchUpInside)
         return rightButton
     }()
+    
     lazy var titleLabel: UILabel = {
         let titleLabel = UILabel(frame: CGRect(x: ZYScreenWidth/2-50, y: ZYStatusBarHeight, width: 100, height: ZYNavigationHeight))
         titleLabel.textAlignment = .center
@@ -29,7 +30,6 @@ public class ZYBaseViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
         self.navigationController?.navigationBar.isHidden = true
         self.setNavigationView()
@@ -41,7 +41,8 @@ public class ZYBaseViewController: UIViewController {
     }
     
     func setBackNav() {
-        let backImage = UIImage.zyImageFromeBundle(named: "icon_back_white.png")
+        //let backImage = UIImage.zyImageFromeBundle(named: "icon_back_white.png")
+        let backImage = UIImage(named: "icon_back_white.png")
         let backButton = UIButton(frame: CGRect(x: 0, y: ZYStatusBarHeight, width: 50, height: ZYNavigationHeight))
         backButton.backgroundColor = UIColor.clear
         backButton.imageView?.contentMode = .center
@@ -73,7 +74,9 @@ public class ZYBaseViewController: UIViewController {
     
     @objc func backClick(button: UIButton) {
         if self.presentationController != nil{
-            self.dismiss(animated: true, completion: nil)
+            //self.dismiss(animated: true, completion: nil)
+            //Pop到照片选择页面
+            self.navigationController!.popViewController(animated: true)
         }else{
             self.navigationController!.popViewController(animated: true)
         }

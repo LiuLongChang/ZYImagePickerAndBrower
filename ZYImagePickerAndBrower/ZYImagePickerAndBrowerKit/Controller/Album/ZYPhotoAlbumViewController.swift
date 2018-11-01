@@ -314,6 +314,7 @@ class ZYPhotoAlbumViewController: ZYBaseViewController, PHPhotoLibraryChangeObse
             cell.photoImage = result!
         })
         
+        
         if type == .selectPhoto {
             
             if selectStyle == .number {

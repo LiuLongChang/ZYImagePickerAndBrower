@@ -117,7 +117,8 @@ class ZYPhotoPreviewViewController: ZYBaseViewController, UICollectionViewDelega
                     image = ZYSelectSkinImage
                 }
             }
-            self.setRightImageButton(normalImage: UIImage.zyImageFromeBundle(named: "album_select_gray.png"), selectedImage: image, isSelected: self.photoData.divideArray[index])
+            self.setRightImageButton(normalImage: UIImage(named: "album_select_gray.png"), selectedImage: image, isSelected: self.photoData.divideArray[index])
+            //self.setRightImageButton(normalImage: UIImage.zyImageFromeBundle(named: "album_select_gray.png"), selectedImage: image, isSelected: self.photoData.divideArray[index])
         }
         self.view.bringSubview(toFront: self.naviView)
     }
